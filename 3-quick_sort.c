@@ -8,7 +8,7 @@
  */
 void swap(int *a, int *b)
 {
-	if (a != b)
+	if (a != b && *a != *b)
 	{
 		int temp = *a;
 		*a = *b;
@@ -42,7 +42,7 @@ int lomuto_partition(int *array, int low, int high, size_t size)
 			}
 		}
 	}
-	if (i + 1 != high)
+	if (array[i + 1] != array[high])
 	{
 		swap(&array[i + 1], &array[high]);
 		print_array(array, size);
